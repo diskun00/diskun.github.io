@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.0" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Hi, I’m Houkun and currently study MSc. Computer Science in Technical University of Berlin. Besides, I worked as a big data engineer for two years.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="about">
+<meta property="og:url" content="https://diskun00.github.io/about/index.html">
+<meta property="og:site_name" content="Diskun">
+<meta property="og:description" content="Hi, I’m Houkun and currently study MSc. Computer Science in Technical University of Berlin. Besides, I worked as a big data engineer for two years.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-04-14T18:48:55.000Z">
+<meta property="article:modified_time" content="2020-04-14T18:50:40.064Z">
+<meta property="article:author" content="Diskun">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.0.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://diskun00.github.io/about/"/>
+
+
+
+
+
+  <title>VNC Configuration under Ubuntu 19.04 | Diskun</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Diskun</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://diskun00.github.io/2020/03/27/VNC-Configuration-under-Ubuntu-19-04/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Diskun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Diskun">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">VNC Configuration under Ubuntu 19.04</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-27T22:30:34+01:00">2020-03-27</time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>x11vnc is a Vitrutal Netowrk Computing service. It provides real display to remotely control another computer. </p>
+</blockquote>
+<p>I have a PC with Ubuntu 19.04 but only want to use it remotely while keep its remote desktop environment accessibility. During this procedure, I have faced many issues but found rare information regarding Ubuntu 19.04. After I figured it out, I decided to write this article for those who are also troubled as I was.</p>
+<h1 id="Install-X11VNC"><a href="#Install-X11VNC" class="headerlink" title="Install X11VNC"></a>Install X11VNC</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install x11vnc</span><br></pre></td></tr></table></figure>
+
+<p>create password (the following command create a encrpted password for the client to access the server )<br>The encryted password will be stored in the user folder.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x11vnc -storepasswd</span><br></pre></td></tr></table></figure>
+
+<p>You can then test x11vnc service by running following command.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x11vnc -create -xkb -display :0 -noxrecord -noxfixes -noxdamage -rfbauth /home/<span class="variable">$username</span>/.vnc/passwd -usepw</span><br><span class="line"><span class="comment"># -usepw: enable password authentication</span></span><br><span class="line"><span class="comment"># -rfbauth: specify the encrypted password file</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="Display-Manager-Change"><a href="#Display-Manager-Change" class="headerlink" title="Display Manager Change"></a>Display Manager Change</h1><p>Since Ubuntu 19.04 use gdm3 for display manager ( to display login interface), which has some problem with x11vnc and I found no solution online, I then changed display manager to lightdm by using following command.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg-reconfigure gdm3</span><br></pre></td></tr></table></figure>
+<p>You can change it to lightdm in the interface.</p>
+<h1 id="Start-x11vnc-on-Boot"><a href="#Start-x11vnc-on-Boot" class="headerlink" title="Start x11vnc on Boot"></a>Start x11vnc on Boot</h1><p>Afterwards, in order to make the x11vnc on boot, we need make it a service by creating this file to <code>/etc/systemd/system/x11vnc.service</code>.</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description="x11vnc"</span><br><span class="line">Requires=display-manager.service</span><br><span class="line">After=display-manager.service</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">ExecStart=/usr/bin/x11vnc -create -xkb -display :0 -noxrecord -noxfixes -noxdamage -o /var/log/x11vnc.log -rfbauth /home/diskun/.vnc/passwd -usepw -auth guess -forever</span><br><span class="line">ExecStop=/usr/bin/killall x11vnc</span><br><span class="line">Restart=on-failure</span><br><span class="line">Restart-sec=200</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+
+<p><code>ExecStart</code> is the command we wanna execute. There are some new paramters.</p>
+<p> <code>-o /var/log/x11vnc.log</code> : specify the log file path </p>
+<p> <code>-auth guess</code> : let x11vnc autmatically determin display manager path on startup. Without this parameter, x11vnc has problem to execute before login</p>
+<p><code>-forever</code>: Keep listening for more connections rather than exiting as soon as the first client(s) disconnect.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># create the file</span></span><br><span class="line">sudo vi /etc/systemd/system/x11vnc.service</span><br><span class="line"><span class="comment"># reload configuration</span></span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line"><span class="comment"># test the service</span></span><br><span class="line">sudo systemctl start x11vnc </span><br><span class="line"><span class="comment"># you can test the service by </span></span><br><span class="line">sudo systemctl status x11vnc </span><br><span class="line"><span class="comment"># or login from other computer by vnc service</span></span><br><span class="line"><span class="comment"># if it works well, make it run on startup</span></span><br><span class="line">sudo systemctl <span class="built_in">enable</span> x11vnc</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="Connect-Remotely"><a href="#Connect-Remotely" class="headerlink" title="Connect Remotely"></a>Connect Remotely</h1><p>You can then connect your Ubuntu 19.04 remotely. In Mac OS, you can easily connect by open Finder and press <code>CMD</code> + <code>K</code> to open connect server promp and paste folllowing such kind of url:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vnc:&#x2F;&#x2F;192.168.2.142:5900</span><br></pre></td></tr></table></figure>
+<p><code>vnc</code> is the protocal to be used;<br><code>192.168.2.142</code> is the address of your ubuntu server;<br><code>5900</code> is the port to your x11vnc service run on.</p>
+<img src="/2020/03/27/VNC-Configuration-under-Ubuntu-19-04/connect_to_server.png" class="">
+
+<p>Hope this can help solve your problem:D</p>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><ul>
+<li><a href="https://askubuntu.com/a/676978/605301" target="_blank" rel="noopener">https://askubuntu.com/a/676978/605301</a></li>
+<li><a href="http://www.karlrunge.com/x11vnc/x11vnc_opts.html" target="_blank" rel="noopener">http://www.karlrunge.com/x11vnc/x11vnc_opts.html</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ubuntu-19-04/" rel="tag"># ubuntu 19.04</a>
+          
+            <a href="/tags/x11vnc/" rel="tag"># x11vnc</a>
+          
+            <a href="/tags/VNC/" rel="tag"># VNC</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Diskun</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/diskun00" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com/users/5650236" target="_blank" title="StackOverflow">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Install-X11VNC"><span class="nav-number">1.</span> <span class="nav-text">Install X11VNC</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Display-Manager-Change"><span class="nav-number">2.</span> <span class="nav-text">Display Manager Change</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Start-x11vnc-on-Boot"><span class="nav-number">3.</span> <span class="nav-text">Start x11vnc on Boot</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Connect-Remotely"><span class="nav-number">4.</span> <span class="nav-text">Connect Remotely</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">5.</span> <span class="nav-text">References</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Diskun</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
